@@ -1,6 +1,6 @@
 import Box from '@mui/material/Box';
 import type { BoxProps } from '@mui/material/Box';
-import type { SxProps } from '@mui/material';
+import { SxProps, useTheme } from '@mui/material';
 import type { ReactNode } from 'react';
 
 // ----------------------------------------------------------------------
@@ -14,11 +14,13 @@ interface MainProps extends BoxProps {
 }
 
 export default function PageLayout({ children, sx, ...other }: MainProps) {
+  const theme = useTheme();
+
   return (
     <Box
       component="section"
       sx={{
-        background: (theme) => theme.palette.background.paper,
+        background: theme.palette.background.paper,
         mx: { sm: 0, md: SPACING_FROM_SIDES },
         mt: { sm: 0, md: SPACING_FROM_TOP },
         mb: { sm: 0, md: SPACING_FROM_TOP },
