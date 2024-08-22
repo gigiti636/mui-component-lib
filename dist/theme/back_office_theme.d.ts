@@ -1,4 +1,4 @@
-import { Theme, ThemeOptions } from '@mui/material/styles';
+import { Theme, ThemeOptions } from '../../node_modules/@mui/material/styles';
 
 export declare const themeLight: ThemeOptions;
 export declare const themeDark: ThemeOptions;

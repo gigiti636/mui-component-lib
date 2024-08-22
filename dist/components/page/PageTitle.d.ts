@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react';
-import { SxProps } from '@mui/material/styles';
-import { BoxProps } from '@mui/material/Box';
+import { SxProps } from '../../../node_modules/@mui/material/styles';
+import { BoxProps } from '../../../node_modules/@mui/material/Box';
 
 interface PageTitleProps extends Omit<BoxProps, 'title'> {
     title: ReactNode;

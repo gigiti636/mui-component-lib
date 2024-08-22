@@ -1,6 +1,6 @@
 import { Control, FieldValues } from 'react-hook-form';
-import { BoxProps } from '@mui/material/Box';
-import { SxProps } from '@mui/material/styles';
+import { BoxProps } from '../../../node_modules/@mui/material/Box';
+import { SxProps } from '../../../node_modules/@mui/material/styles';
 
 interface FormFieldProps<K extends keyof FieldValues> extends BoxProps {
     for_name: K;

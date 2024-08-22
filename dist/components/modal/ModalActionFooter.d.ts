@@ -1,4 +1,4 @@
-import { StackProps, SxProps } from '@mui/material';
+import { StackProps, SxProps } from '../../../node_modules/@mui/material';
 import { MouseEventHandler } from 'react';
 
 interface ModalActionFooterProps extends StackProps {
