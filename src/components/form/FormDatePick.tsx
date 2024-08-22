@@ -48,6 +48,7 @@ const FormField = <K extends keyof FieldValues>({
         {...datePickerProps}
         label={with_label}
         format="DD-MM-YYYY"
+        //@ts-ignore
         value={dayjs(field.value)}
         onChange={(date) => {
           if (date) {
@@ -55,7 +56,7 @@ const FormField = <K extends keyof FieldValues>({
             field.onChange(date.format('YYYY-MM-DD'));
           }
         }}
-        maxDate={!noFuture ? undefined : dayjs()}
+        disableFuture={noFuture}
         slotProps={{
           textField: {
             variant: 'outlined',

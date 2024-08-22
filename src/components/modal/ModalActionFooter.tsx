@@ -1,7 +1,6 @@
 import type { StackProps, SxProps } from '@mui/material';
 import { Button, Stack } from '@mui/material';
 import { MouseEventHandler } from 'react';
-import { useTranslation } from 'react-i18next';
 
 interface ModalActionFooterProps extends StackProps {
   cancelAction?: MouseEventHandler | undefined;
@@ -25,7 +24,6 @@ const ModalActionFooter = ({
   sx,
   ...rest
 }: ModalActionFooterProps) => {
-  const { t } = useTranslation('common');
   return (
     <Stack flexDirection={'row'} justifyContent={{ xs: 'space-between', md: 'end' }} mt={6} sx={sx} {...rest}>
       {cancelAction && (
@@ -36,7 +34,7 @@ const ModalActionFooter = ({
           sx={{ fontSize: (theme) => theme.typography.fontSize * 1.15 }}
           onClick={cancelAction}
         >
-          {cancelActionLabel ? cancelActionLabel : t('buttons.cancel')}
+          {cancelActionLabel ? cancelActionLabel : 'cancel'}
         </Button>
       )}
 

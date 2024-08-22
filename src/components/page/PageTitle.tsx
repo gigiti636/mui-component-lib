@@ -8,7 +8,7 @@ interface PageTitleProps extends Omit<BoxProps, 'title'> {
   sx?: SxProps;
 }
 
-export const PageTitle: FC<PageTitleProps> = ({ title, sx, ...rest }) => {
+const PageTitle: FC<PageTitleProps> = ({ title, sx, ...rest }) => {
   const theme = useTheme();
 
   return (
@@ -34,3 +34,5 @@ export const PageTitle: FC<PageTitleProps> = ({ title, sx, ...rest }) => {
     </Box>
   );
 };
+
+export default PageTitle;

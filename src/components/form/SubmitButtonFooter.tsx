@@ -1,7 +1,6 @@
 import type { SyntheticEvent } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
-import { useTranslation } from 'react-i18next';
 
 interface SubmitButtonFooter {
   onClick: (_event: SyntheticEvent) => void;
@@ -9,7 +8,6 @@ interface SubmitButtonFooter {
 }
 
 function SubmitButton({ onClick, isValid }: SubmitButtonFooter) {
-  const { t } = useTranslation('common');
   return (
     <Box marginTop={3} marginBottom={3} textAlign={'right'}>
       <Button
@@ -18,7 +16,7 @@ function SubmitButton({ onClick, isValid }: SubmitButtonFooter) {
         color={'success'}
         sx={{ minWidth: 150, opacity: isValid ? 1 : 0.6 }}
       >
-        {t('buttons.submit')}
+        Submit
       </Button>
     </Box>
   );

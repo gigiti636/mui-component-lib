@@ -27,6 +27,7 @@ const useURLParams = <T extends URLParams>() => {
     const paramsObject: T = {} as T;
     const paramsArray = Array.from(searchParams); // Convert to array first
 
+    // @ts-ignore
     for (const [param, value] of paramsArray) {
       const paramKey = param as keyof T;
       if (Array.isArray(paramsObject[paramKey])) {

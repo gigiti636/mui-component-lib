@@ -22,4 +22,4 @@ export declare const getCommonCarouselStyles: (theme: Theme) => {
     };
 };
 export declare const getSecondaryBgColor: (theme: Theme) => string;
-export declare const getBorderColor: (theme: Theme) => "rgba(0, 0, 0, 0.30)" | "rgba(179 ,168, 168 , 0.8)";
+export declare const getBorderColor: (theme: Theme) => "rgba(179 ,168, 168 , 0.8)" | "rgba(0, 0, 0, 0.30)";
