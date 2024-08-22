@@ -1,5 +1,5 @@
-import { DataGridProps, GridColDef } from '../../../node_modules/@mui/x-data-grid';
-import { SxProps } from '../../../node_modules/@mui/material/styles';
+import { DataGridProps, GridColDef } from '@mui/x-data-grid';
+import { SxProps } from '@mui/material/styles';
 
 export interface DatatableProps<T> extends Partial<DataGridProps> {
     cols: GridColDef[];

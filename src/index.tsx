@@ -1,1 +1,1 @@
-export { PageLayout, PageTitle, PageSection } from './components/page';
+export * from './components/page';

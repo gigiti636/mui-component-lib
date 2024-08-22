@@ -1,5 +1,5 @@
-import { TypographyProps } from '../../../node_modules/@mui/material';
-import { SxProps } from '../../../node_modules/@mui/material/styles';
+import { TypographyProps } from '@mui/material';
+import { SxProps } from '@mui/material/styles';
 
 interface FormSectionLabel extends TypographyProps {
     label: string;

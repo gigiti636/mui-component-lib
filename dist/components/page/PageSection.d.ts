@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { BoxProps } from '../../../node_modules/@mui/material/Box';
-import { SxProps } from '../../../node_modules/@mui/material/styles';
+import { BoxProps } from '@mui/material/Box';
+import { SxProps } from '@mui/material/styles';
 
 interface CustomBoxProps extends BoxProps {
     children: ReactNode;

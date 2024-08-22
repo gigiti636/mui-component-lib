@@ -1,4 +1,4 @@
-import { Theme } from '../../node_modules/@mui/material/styles';
+import { Theme } from '@mui/material/styles';
 
 export declare const getCommonCarouselStyles: (theme: Theme) => {
     '.react-multiple-carousel__arrow': {

@@ -1,6 +1,6 @@
-import { ModalProps } from '../../../node_modules/@mui/material/Modal';
-import { TransitionProps } from '../../../node_modules/@mui/material/transitions';
-import { SxProps } from '../../../node_modules/@mui/material/styles';
+import { ModalProps } from '@mui/material/Modal';
+import { TransitionProps } from '@mui/material/transitions';
+import { SxProps } from '@mui/material/styles';
 import { MouseEventHandler, ReactNode } from 'react';
 
 interface ModalFooterControl {

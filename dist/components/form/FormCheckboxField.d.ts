@@ -1,5 +1,5 @@
 import { Control, FieldValues } from 'react-hook-form';
-import { BoxProps } from '../../../node_modules/@mui/material/Box';
+import { BoxProps } from '@mui/material/Box';
 
 interface CheckboxFieldProps<K extends keyof FieldValues> extends BoxProps {
     for_name: K;

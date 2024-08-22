@@ -32,13 +32,7 @@ const app = async (): Promise<UserConfigExport> => {
       },
     },
     resolve: {
-      alias: [
-        { find: '@', replacement: path.resolve(__dirname, 'src') },
-        {
-          find: /^(@mui\/[\w-]+)/,
-          replacement: path.resolve(__dirname, 'node_modules/$1'),
-        },
-      ],
+      alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
     },
     test: {
       globals: true,
