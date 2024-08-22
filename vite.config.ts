@@ -21,7 +21,7 @@ const app = async (): Promise<UserConfigExport> => {
       },
       minify: true,
       rollupOptions: {
-        external: ['react', 'react/jsx-runtime', 'react-dom'],
+        external: ['react', 'react/jsx-runtime', 'react-dom', '@mui/icons-material', '@mui/material'],
         output: {
           globals: {
             react: 'React',
