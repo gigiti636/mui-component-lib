@@ -19,7 +19,7 @@ import { grey } from '@mui/material/colors';
 interface SearchProps {
   flavor?: string;
 }
-export const Search = styled('div')<SearchProps>(({ theme, flavor = 'contained' }) => ({
+const Search = styled('div')<SearchProps>(({ theme, flavor = 'contained' }) => ({
   position: 'relative',
   borderRadius: flavor === 'contained' ? '28px' : '11px',
   marginLeft: 0,
@@ -36,7 +36,7 @@ export const Search = styled('div')<SearchProps>(({ theme, flavor = 'contained' 
       : `1px solid ${theme.palette.primary.main}`,
 }));
 
-export const StyledInputBase = styled(InputBase)(({ theme }) => ({
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: 'inherit',
   width: '100%',
   '& .MuiInputBase-input': {

@@ -15,7 +15,15 @@ interface Props extends DrawerProps {
   width?: string | number;
 }
 
-function Drawer({ open, anchor = 'right', closeDrawer, onClose, children, header, width = 300 }: Props) {
+export function Drawer({
+  open,
+  anchor = 'right',
+  closeDrawer,
+  onClose,
+  children,
+  header,
+  width = 300,
+}: Props) {
   const styleOuter: SxProps<Theme> = {
     boxShadow: 24,
   };
