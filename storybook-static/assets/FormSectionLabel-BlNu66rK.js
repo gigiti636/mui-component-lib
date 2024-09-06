@@ -1,0 +1,1 @@
+import{j as m}from"./defaultTheme-CsXV0Sr8.js";import{T as n}from"./Typography-BTCUE2LK.js";const e=({label:o,sx:t})=>m.jsxs(n,{textAlign:"center",color:r=>r.palette.mode==="dark"?"white":"black",fontSize:"1.2rem",sx:{ml:1,mb:1,...t},children:[o,":"]}),a=e;e.__docgenInfo={description:"",methods:[],displayName:"FormSectionLabel"};export{a as F};

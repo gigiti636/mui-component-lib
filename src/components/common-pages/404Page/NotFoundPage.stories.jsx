@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 export default {
   title: 'Common-Pages/NotFound',
   component: NotFound,
+  tags: ['!autodocs'],
 };
 
 const Template = () => (

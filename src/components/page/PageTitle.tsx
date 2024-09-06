@@ -13,7 +13,6 @@ const PageTitle: FC<PageTitleProps> = ({ title, sx, ...rest }) => {
 
   return (
     <Box
-      component={'h2'}
       sx={{
         fontSize: {
           xs: theme.typography.fontSize * 1.9,
@@ -22,7 +21,7 @@ const PageTitle: FC<PageTitleProps> = ({ title, sx, ...rest }) => {
         },
         fontWeight: '900',
         textAlign: 'left',
-
+        component: 'h2',
         my: 0,
         mt: 1,
         color: theme.palette.mode === 'dark' ? theme.palette.common.white : theme.palette.common.black,

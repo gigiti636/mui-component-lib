@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 export default {
   title: 'Common-Pages/ErrorPage',
   component: ErrorPage,
+  tags: ['!autodocs'],
 };
 
 const Template = () => (

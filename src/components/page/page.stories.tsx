@@ -15,15 +15,12 @@ export default {
 
 const Template = (args: PageProps) => (
   <>
-    <PageLayout>
-      <PageTitle title={args.title} />
-    </PageLayout>
-    <PageLayout>
-      <PageSection>
-        <p>Page Section</p>
-      </PageSection>
-    </PageLayout>
-    <PageLayout>Page Layout that is used across stories</PageLayout>
+    <PageTitle title={args.title} mx={2} />
+
+    <PageSection>
+      <p>Page Section</p>
+    </PageSection>
+    <PageLayout mt={2}>Page Layout that is used across stories</PageLayout>
   </>
 );
 

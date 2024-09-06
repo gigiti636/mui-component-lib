@@ -4,7 +4,7 @@ import { storyDecorators } from './decorators';
 const preview: Preview = {
   // @ts-ignore
   decorators: storyDecorators,
-  tags: ['!autodocs'],
+  tags: ['autodocs'],
 };
 
 export default preview;

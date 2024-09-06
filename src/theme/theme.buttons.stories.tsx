@@ -2,7 +2,7 @@ import { Button, Typography, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
 export default {
-  title: 'Design System/Buttons',
+  title: 'Theme Preview/Buttons',
 };
 
 const ButtonShowcase = () => {

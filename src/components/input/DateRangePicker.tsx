@@ -32,7 +32,7 @@ function CustomDatePicker({
   };
 
   return (
-    <Box display={'flex'} justifyContent={'center'} flexWrap={'wrap'}>
+    <Box display={'flex'} justifyContent={'center'} flexWrap={'wrap'} alignItems={'center'}>
       <DatePicker
         label={label.from}
         closeOnSelect={true}
@@ -74,7 +74,7 @@ function CustomDatePicker({
             variant: 'outlined',
             size: 'small',
             sx: {
-              mt: 2,
+              mt: 1,
               mr: 1,
               width: 300,
               '& input': {

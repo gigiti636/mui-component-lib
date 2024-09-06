@@ -29,6 +29,15 @@ const app = async (): Promise<UserConfigExport> => {
             'react-dom': 'ReactDOM',
           },
         },
+        // Exclude story files from the build
+        input: {
+          main: path.resolve(__dirname, 'src/index'),
+          // Add more inputs if needed
+        },
+        // Exclude story files by matching patterns
+        treeshake: {
+          moduleSideEffects: (id) => !id.includes('stories'),
+        },
       },
     },
     resolve: {

@@ -9,6 +9,7 @@ interface FileInputProps {
   onFileSelected: (_file: File, _base64file: string) => void;
   maxWidth?: string;
   label?: { upload_button: string; upload_prompt: string; max_size: string; file_type: string };
+  errorMsg?: string;
 }
 
 const FileInput: FC<FileInputProps> = ({
@@ -22,9 +23,10 @@ const FileInput: FC<FileInputProps> = ({
     max_size: 'Max size',
     file_type: 'File type',
   },
+  errorMsg = '',
 }) => {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(errorMsg);
 
   const handleFileUpload = async (event: ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();

@@ -1,40 +1,33 @@
-import Box from '@mui/material/Box';
 import type { BoxProps } from '@mui/material/Box';
-import { useTheme } from '@mui/material';
+import Box from '@mui/material/Box';
 import type { SxProps } from '@mui/material';
-import type { ReactNode } from 'react';
+import type { HTMLAttributes } from 'react';
+import { useIsMobile } from '@/theme/hook.ts';
 
-// ----------------------------------------------------------------------
+type NavContentProps = {
+  transparent?: boolean;
+} & BoxProps &
+  HTMLAttributes<HTMLDivElement> & {
+    sx?: SxProps;
+  };
 
-const SPACING_FROM_TOP = 3;
-const SPACING_FROM_SIDES = 2;
-
-interface MainProps extends BoxProps {
-  children: ReactNode;
-  sx?: SxProps;
-}
-
-export default function PageLayout({ children, sx, ...other }: MainProps) {
-  const theme = useTheme();
+function PageLayout({ children, transparent = false, ...rest }: NavContentProps) {
+  const isMobile = useIsMobile();
 
   return (
     <Box
-      component="section"
-      sx={{
-        background: theme.palette.background.paper,
-        mx: { sm: 0, md: SPACING_FROM_SIDES },
-        mt: { sm: 0, md: SPACING_FROM_TOP },
-        mb: { sm: 0, md: SPACING_FROM_TOP },
-        borderRadius: { sm: 0, md: '13px' },
-        paddingX: { xs: 2, lg: 5 },
-        paddingTop: 3,
-        paddingBottom: SPACING_FROM_TOP * 2,
-        flexGrow: { xs: 1, md: 0 },
-        ...sx,
-      }}
-      {...other}
+      component="main"
+      boxShadow={transparent ? 0 : 2}
+      bgcolor={transparent ? 'transparent' : 'background.paper'}
+      minHeight={isMobile ? '100vh' : '200px'}
+      borderRadius={(theme) => (isMobile ? '25px 25px 0 0' : theme.shape.borderRadius)}
+      boxSizing={'content-box'}
+      pb={isMobile ? 4 : 0}
+      {...rest}
     >
       {children}
     </Box>
   );
 }
+
+export default PageLayout;

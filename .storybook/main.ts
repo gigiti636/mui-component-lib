@@ -10,6 +10,7 @@ const config: StorybookConfig = {
     '@storybook/addon-themes',
     '@storybook/addon-actions',
     '@storybook/addon-viewport',
+    '@storybook/addon-backgrounds',
     '@storybook/addon-docs',
   ],
   framework: {
@@ -19,3 +20,4 @@ const config: StorybookConfig = {
 };
 //@ts-ignore
 export default config;
+//@ts-ignore

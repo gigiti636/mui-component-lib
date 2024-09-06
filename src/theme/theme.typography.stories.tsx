@@ -2,7 +2,7 @@ import { Typography, Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 
 export default {
-  title: 'Design System/Typography',
+  title: 'Theme Preview/Typography',
 };
 
 const TypographyShowcase = () => {

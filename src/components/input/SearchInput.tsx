@@ -62,11 +62,11 @@ export default function SearchInput({
   onClear,
   presetValue,
   sx,
-  manualSearch = false,
+  manualSearch = true,
   clearQuery,
   flavor = 'contained',
 }: Props) {
-  const [query, setQuery] = useState<string>('');
+  const [query, setQuery] = useState<string>(presetValue ?? '');
   const [, startTransition] = useTransition();
 
   const handleSearch = useCallback(
@@ -114,11 +114,6 @@ export default function SearchInput({
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [query]);
-
-  useEffect(() => {
-    if (presetValue) setQuery(presetValue);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <Search sx={sx} title={title} flavor={flavor} aria-label={'search-input'}>

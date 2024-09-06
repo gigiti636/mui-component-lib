@@ -59,6 +59,7 @@
   },
   "devDependencies": {
     "@storybook/addon-actions": "^8.2.9",
+    "@storybook/addon-backgrounds": "^8.2.9",
     "@storybook/addon-controls": "^8.2.9",
     "@storybook/addon-docs": "^8.2.9",
     "@storybook/addon-links": "^8.1.5",

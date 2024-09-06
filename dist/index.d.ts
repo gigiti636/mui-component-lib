@@ -1,1 +1,1 @@
-export * from './components/page';
+export * from './src/index'

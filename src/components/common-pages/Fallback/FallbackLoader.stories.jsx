@@ -4,6 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 export default {
   title: 'Common-Pages/Fallback',
   component: Fallback,
+  tags: ['!autodocs'],
 };
 
 const Template = () => (
