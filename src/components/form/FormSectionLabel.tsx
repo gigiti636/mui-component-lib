@@ -12,7 +12,7 @@ const FormSectionLabel = ({ label, sx }: FormSectionLabel) => {
     <Typography
       textAlign={'center'}
       color={(theme) => (theme.palette.mode === 'dark' ? 'white' : 'black')}
-      fontSize={'18px'}
+      fontSize={'1.2rem'}
       sx={{ ml: 1, mb: 1, ...sx }}
     >
       {label}:

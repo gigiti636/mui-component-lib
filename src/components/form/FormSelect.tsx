@@ -11,6 +11,7 @@ interface FormSelectProps<K extends keyof FieldValues> extends BoxProps {
   error_message: string;
   options: { value: string; label: string }[];
   withValueTitle?: boolean;
+  variant?: 'outlined' | 'filled' | 'standard';
 }
 
 const FormSelect = <K extends keyof FieldValues>({
@@ -21,6 +22,7 @@ const FormSelect = <K extends keyof FieldValues>({
   has_error,
   error_message,
   options,
+  variant = 'outlined',
   withValueTitle = false,
   ...rest
 }: FormSelectProps<K>) => {
@@ -36,7 +38,7 @@ const FormSelect = <K extends keyof FieldValues>({
         fullWidth
         size="small"
         label={with_label}
-        variant="outlined"
+        variant={variant}
         sx={{ textAlign: 'left' }}
         {...field}
         error={has_error}

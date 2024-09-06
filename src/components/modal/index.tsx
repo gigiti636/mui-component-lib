@@ -9,7 +9,7 @@ import ModalActionFooter from './ModalActionFooter';
 interface ModalFooterControl {
   cancelActionLabel?: string;
   cancelAction?: () => void;
-  action?: string;
+  callToActionLabel?: string;
   callToAction?: () => void;
   callToActionHidden?: boolean;
   callToActionIsDelete?: boolean;
@@ -33,7 +33,7 @@ export default function TransitionsModal({
   closeModal,
   cancelActionLabel,
   cancelAction,
-  action,
+  callToActionLabel,
   callToAction,
   callToActionHidden = false,
   callToActionIsDelete = false,
@@ -88,7 +88,7 @@ export default function TransitionsModal({
           <Box>{children}</Box>
           {callToAction && (
             <ModalActionFooter
-              action={action ?? 'Proceed'}
+              action={callToActionLabel ?? 'Proceed'}
               cancelActionLabel={cancelActionLabel}
               callToAction={callToAction}
               callToActionHidden={callToActionHidden}

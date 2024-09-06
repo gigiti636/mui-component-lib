@@ -16,6 +16,7 @@ interface FormFieldProps<K extends keyof FieldValues> extends BoxProps {
   sx?: SxProps;
   datePickerProps?: Record<string, string | boolean>;
   noFuture?: boolean;
+  variant?: 'outlined' | 'filled' | 'standard';
 }
 
 const FormField = <K extends keyof FieldValues>({
@@ -28,6 +29,7 @@ const FormField = <K extends keyof FieldValues>({
   readonly = false,
   sx,
   datePickerProps,
+  variant = 'outlined',
   noFuture = false,
   ...rest
 }: FormFieldProps<K>) => {
@@ -48,8 +50,8 @@ const FormField = <K extends keyof FieldValues>({
         {...datePickerProps}
         label={with_label}
         format="DD-MM-YYYY"
-        //@ts-ignore
-        value={dayjs(field.value)}
+        // @ts-ignore
+        value={dayjs(field?.value)}
         onChange={(date) => {
           if (date) {
             // @ts-ignore
@@ -59,7 +61,7 @@ const FormField = <K extends keyof FieldValues>({
         disableFuture={noFuture}
         slotProps={{
           textField: {
-            variant: 'outlined',
+            variant: variant,
             size: 'small',
             sx: {
               width: 300,

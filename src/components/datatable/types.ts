@@ -1,14 +1,14 @@
 import type { DataGridProps, GridColDef } from '@mui/x-data-grid';
 import type { SxProps } from '@mui/material/styles';
 
-export interface DatatableProps<T> extends Partial<DataGridProps> {
+export interface UpDataGridProps<T> extends Partial<DataGridProps> {
   cols: GridColDef[];
   rows: T[];
   id: string | number;
-  rowCount: number;
   withRowSelectOptions?: boolean;
+  isServerSide?: boolean;
   sx?: SxProps;
-  onServerSideParamsChange: (_page: number, _pageSize: rowsPerPageOptions) => void;
+  onServerSideParamsChange?: (_page: number, _pageSize: rowsPerPageOptions) => void;
 }
 
 // eslint-disable-next-line no-unused-vars
@@ -30,8 +30,6 @@ export interface OrderDetails {
 export interface QueryParams {
   page: number;
   pageSize: rowsPerPageOptions;
-  column: string;
-  type: SortingType;
 }
 
 export enum OrderType {

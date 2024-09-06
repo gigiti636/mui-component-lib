@@ -5,9 +5,10 @@ import Button from '@mui/material/Button';
 interface SubmitButtonFooter {
   onClick: (_event: SyntheticEvent) => void;
   isValid?: boolean;
+  label?: string;
 }
 
-function SubmitButton({ onClick, isValid }: SubmitButtonFooter) {
+function SubmitButton({ onClick, isValid, label = 'Submit' }: SubmitButtonFooter) {
   return (
     <Box marginTop={3} marginBottom={3} textAlign={'right'}>
       <Button
@@ -16,7 +17,7 @@ function SubmitButton({ onClick, isValid }: SubmitButtonFooter) {
         color={'success'}
         sx={{ minWidth: 150, opacity: isValid ? 1 : 0.6 }}
       >
-        Submit
+        {label}
       </Button>
     </Box>
   );

@@ -3,7 +3,7 @@ import { CSSProperties } from 'react';
 
 const commonPalette = {
   primary: {
-    light: '#4f92ee',
+    light: '#ADDBFF',
     main: '#3A5CB4',
     dark: '#03387a',
   },
@@ -44,7 +44,7 @@ const breakpoints = {
     sm: 480,
     md: 810,
     lg: 1050,
-    xl: 1400,
+    xl: 1580,
   },
 };
 
@@ -73,6 +73,12 @@ const getStyleOverrides = (mode: Mode = 'light'): Components<Omit<Theme, 'compon
     MuiCssBaseline: {
       styleOverrides: {
         body: {
+          background:
+            mode === 'light'
+              ? 'linear-gradient(167deg, rgba(229, 237, 255, 0.15) 2.39%, rgba(241, 248, 255, 0.30) 22.83%, rgba(255, 255, 255, 0.16) 61.1%, rgba(255, 228, 193, 0.14) 81.54%), #F5F5F5'
+              : 'default',
+          backgroundRepeat: 'no-repeat',
+          backgroundAttachment: 'fixed',
           scrollbarColor: `${scrollbarColor} ${scrollbarBackgroundColor}`,
           '&::-webkit-scrollbar, & *::-webkit-scrollbar': {
             backgroundColor: scrollbarBackgroundColor,
@@ -103,7 +109,6 @@ const getStyleOverrides = (mode: Mode = 'light'): Components<Omit<Theme, 'compon
         root: {
           backgroundColor: mode === 'light' ? '#f7f7f7' : '',
           transition: 'background-color, box-shadow',
-          borderRadius: '20px',
           '&:hover': {
             backgroundColor: (theme: Theme): CSSProperties['backgroundColor'] => theme.palette.action.hover,
             boxShadow: (theme: Theme): CSSProperties['boxShadow'] => theme.shadows[4],
@@ -126,6 +131,10 @@ const getStyleOverrides = (mode: Mode = 'light'): Components<Omit<Theme, 'compon
   };
 };
 
+const typography = {
+  //fontFamily: 'FontUp',
+};
+
 const shape = {
   borderRadius: 5,
 };
@@ -139,12 +148,13 @@ export const themeLight: ThemeOptions = {
     },
     ...commonPalette,
     text: {
-      primary: '#262626', // Dark gray
+      primary: '#272930', // Dark gray
       secondary: '#757575', // Gray
       disabled: '#999', // Light gray
     },
   },
   components: getStyleOverrides('light'),
+  typography,
   shape,
   breakpoints,
 };
@@ -158,10 +168,7 @@ export const themeDark: ThemeOptions = {
     ...commonPalette,
   },
   components: getStyleOverrides('dark'),
+  typography,
   shape,
   breakpoints,
-};
-
-export const getSecondaryBgColor = (theme: Theme): string => {
-  return theme.palette.mode === 'dark' ? '#353535' : '#EEEFF0';
 };
