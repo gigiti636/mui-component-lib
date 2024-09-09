@@ -10,5 +10,5 @@ interface Props extends DrawerProps {
     header?: React.ReactNode;
     width?: string | number;
 }
-declare function Drawer({ open, anchor, closeDrawer, onClose, children, header, width }: Props): import("react/jsx-runtime").JSX.Element;
+export declare function Drawer({ open, anchor, closeDrawer, onClose, children, header, width, }: Props): import("react/jsx-runtime").JSX.Element;
 export default Drawer;
