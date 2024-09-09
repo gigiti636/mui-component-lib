@@ -14,17 +14,10 @@ const app = async (): Promise<UserConfigExport> => {
     build: {
       copyPublicDir: false,
       lib: {
-        entry: {
-          index: path.resolve(__dirname, 'src/index'),
-          theme: path.resolve(__dirname, 'src/theme/index'),
-          components: path.resolve(__dirname, 'src/components/index'),
-        },
+        entry: path.resolve(__dirname, 'src/index'),
         name: formattedName,
-        formats: ['es'],
-        fileName: (format, entryName) => {
-          // Adjust the filename based on the entry point
-          return entryName === 'index' ? `${formattedName}.${format}.js` : `${entryName}.${format}.js`;
-        },
+        formats: ['es', 'umd'],
+        fileName: (format) => `${formattedName}.${format}.js`,
       },
       minify: true,
       rollupOptions: {
@@ -38,9 +31,8 @@ const app = async (): Promise<UserConfigExport> => {
         },
         // Exclude story files from the build
         input: {
-          index: path.resolve(__dirname, 'src/index'),
-          theme: path.resolve(__dirname, 'src/theme/index'),
-          components: path.resolve(__dirname, 'src/components/index'),
+          main: path.resolve(__dirname, 'src/index'),
+          // Add more inputs if needed
         },
         // Exclude story files by matching patterns
         treeshake: {
@@ -57,5 +49,5 @@ const app = async (): Promise<UserConfigExport> => {
     },
   });
 };
-
+// https://vitejs.dev/config/
 export default app;
