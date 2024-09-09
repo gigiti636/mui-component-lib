@@ -1,8 +1,9 @@
 import type { BoxProps } from '@mui/material/Box';
 import Box from '@mui/material/Box';
+import { useTheme } from '@mui/material';
 import type { SxProps } from '@mui/material';
 import type { HTMLAttributes } from 'react';
-import { useIsMobile } from '@/theme/hook.ts';
+import { useIsMobile } from '@/theme/hook';
 
 type NavContentProps = {
   transparent?: boolean;
@@ -13,6 +14,7 @@ type NavContentProps = {
 
 function PageLayout({ children, transparent = false, ...rest }: NavContentProps) {
   const isMobile = useIsMobile();
+  const theme = useTheme();
 
   return (
     <Box
@@ -20,7 +22,7 @@ function PageLayout({ children, transparent = false, ...rest }: NavContentProps)
       boxShadow={transparent ? 0 : 2}
       bgcolor={transparent ? 'transparent' : 'background.paper'}
       minHeight={isMobile ? '100vh' : '200px'}
-      borderRadius={(theme) => (isMobile ? '25px 25px 0 0' : theme.shape.borderRadius)}
+      borderRadius={isMobile ? '25px 25px 0 0' : theme.shape.borderRadius}
       boxSizing={'content-box'}
       pb={isMobile ? 4 : 0}
       {...rest}
